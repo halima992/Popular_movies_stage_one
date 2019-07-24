@@ -34,7 +34,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieAdapter
 
     public void setMoviesData(List <MovieModule>movieInfo) {
         movieData.addAll(movieInfo) ;
-        Log.d("movieAdapter","the response 55 is : "+ movieData.get(0).getTitle());
         notifyDataSetChanged();
     }
     public void clearMovieData() {
@@ -54,12 +53,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieAdapter
     public MovieAdapter.MovieAdapterViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         Context context = viewGroup.getContext();
         int layoutIdForListItem = R.layout.number_list_items;
-        Log.d("movieAdapter","iam on create : ");
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(layoutIdForListItem, viewGroup, false);
         MovieAdapterViewHolder viewHolder = new MovieAdapterViewHolder(view);
-        Log.d("movieAdapter","the response  on create is : "+viewHolder.getItemId());
         return viewHolder;
     }
     @Override

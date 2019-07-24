@@ -30,7 +30,7 @@ public class DetailsMovie extends AppCompatActivity {
                 .into(moviePoster);
         //-----------------------------------------------------
         movieRate = (TextView)findViewById(R.id.tv_vote);
-        String vote = getIntent().getStringExtra("rate");
+        String vote = getIntent().getStringExtra("vote");
         movieRate.setText(vote);
         //-----------------------------------------------------
         movieDateRelease = (TextView)findViewById(R.id.tv_date_release);

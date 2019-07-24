@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.AsyncTask;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -89,9 +88,7 @@ public class MainActivity extends AppCompatActivity
 
             try {
                 String jsonMovieResponse = NetworkUtilities.getResponseFromHttpUrl(movieRequestUrl);
-                Log.d("Mainactivity", "the response is : " + jsonMovieResponse);
                 movies.addAll(JSONUtilities.parseMovieJson(jsonMovieResponse));
-                Log.d("Mainactivity", "the response  4 is : " + movies.get(0).getPosterPath());
                 return movies;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -102,9 +99,6 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         protected void onPostExecute(List<MovieModule> movieData) {
-            Log.d("Mainactivity", "the response of movies is : " + movieData.get(0).getTitle());
-            //movies.clear();
-            Log.d("Mainactivity", "the response of movies is : " + movieData.get(0).getTitle());
             movieAdapter.setMoviesData(movieData);
         }
 
